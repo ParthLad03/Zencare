@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ZenCare</title>
+  <link rel="icon" href="logo.png" type="image/x-icon"/>
+  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- frontend backend connection-->
+  <form id="appointmentForm">
+    <!-- Form Fields -->
+    <button type="submit">Make an Appointment</button>
+  </form>
+  
+  <script>
+    document.getElementById('appointmentForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+  
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
+  
+      const response = await fetch('http://localhost:5000/api/appointments', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+  
+      const result = await response.json();
+      console.log(result);
+    });
+  </script>
+  
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- backend-->
+  
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+      </div>
+      <div class="d-none d-lg-flex social-links align-items-center">
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+        <!-- Logo -->
+        <a href="index.html" class="logo d-flex align-items-center">
+            <img src="logo.png" alt="Logo" class="img-fluid" style="height: 1500px; width: 50px;"> <!-- Increased height and width -->
+        </a>
+
+        <!-- Navigation -->
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+    </div>
+</header>
+
+
+
+
+  <!-- ======= Home Section ======= -->
+  <section id="home" class="d-flex align-items-center">
+    <div class="container">
+      <h1>Welcome to Zencare <br> Mental Health care</h1>
+      <h2>We are team of Specialized Doctors.<br>"Your devotion and care bring healing, comfort and hope."</h2>
+      <a href="#about" class="btn-get-started scrollto">Learn More</a>
+    </div>
+  </section><!-- End Home -->
+<br><br><br><br><br><br><br><br>
+  <main id="main">
+    
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="fas fa-heartbeat"></i></div>
+              <h4 class="title"><a href=""> Normal checkup</a></h4>
+              <p class="description">"A normal checkup at our hospital includes a thorough examination, routine tests, and consultations to monitor and maintain your overall health and catch any potential issues early."</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon"><i class="fas fa-dna"></i></div>
+              <h4 class="title"><a href="">Counselling</a></h4>
+              <p class="description">"Our hospital provides counseling services to support your mental and emotional well-being, offering personalized guidance and support through professional and compassionate care."</p>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="fas fa-temperature-high"></i></div>
+              <h4 class="title"><a href="">Body temperature</a></h4>
+              <p class="description">"During a hospital checkup, we monitor your body temperature as part of a routine assessment to detect any signs of fever or underlying health issues."</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="fas fa-hand-holding-medical"></i></div>
+              <h4 class="title"><a href="">Medicine use</a></h4>
+              <p class="description">"Our hospital prescribes and administers medications to treat and manage various health conditions, ensuring effective treatment and patient safety through careful dosage and monitoring."</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Featured Services Section -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>About Us</h2>
+          <p>Zencare promotes the philosophy that "Health is Wealth," emphasizing the value of good health over material wealth. We offer comprehensive healthcare services, including emergency care, specialized treatments, and advanced diagnostics to meet diverse healthcare needs.
+            Our team provides personalized counseling to support mental and emotional well-being, ensuring a compassionate and professional environment. Regular checkups include thorough examinations, routine tests, and consultations to monitor health and catch potential issues early. We also prescribe and administer medications with careful attention to dosage and monitoring.</p>
+        </div>
+
+    <div class="row">
+    <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center
+     align-items-stretch position-relative">
+    <a href="https://www.youtube.com/watch?v=CPfqsn3cNDQ&pp=ygUPSG9zcGl0YWwgYWR2aWNl" class="glightbox play-btn mb-4"></a>
+          </div>
+
+    <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch
+     justify-content-center py-5 px-lg-5">
+            
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-heart"></i></div>
+              <h4 class="title"><a href="">HEALTH IS WEALTH</a></h4>
+              <p class="description">"Health is wealth" means that good health is more valuable than money. Without health, material wealth loses its meaning. Prioritizing healthy habits ensures a fulfilling and productive life..</p>
+            </div>
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-health"></i></div>
+              <h4 class="title"><a href="">EMERGENCY</a></h4>
+              <p class="description">"In an emergency, we promise to act swiftly and communicate clearly to ensure you receive timely and effective medical care."
+              </div>
+
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-help-circle"></i></div>
+              <h4 class="title"><a href="">SERVICES </a></h4>
+              <p class="description">"Our hospital offers comprehensive services, including emergency care, specialized treatments, and advanced diagnostics to meet your healthcare needs."</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+   <!-- ======= Counts Section ======= -->
+   <section id="counts" class="counts">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row no-gutters">
+
+        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+          <div class="count-box">
+            <i class="fas fa-user-md"></i>
+            <span data-purecounter-start="0" data-purecounter-end="95" data-purecounter-duration="1" class="purecounter"></span>
+            <p><strong>Doctors</strong> consequuntur quae qui deca rode</p>
+            <a href="#">Find out more &raquo;</a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+          <div class="count-box">
+            <i class="far fa-hospital"></i>
+            <span data-purecounter-start="0" data-purecounter-end="36" data-purecounter-duration="1" class="purecounter"></span>
+            <p><strong>Departments</strong> adipisci atque cum aut numquam delectus</p>
+            <a href="#">Find out more &raquo;</a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+          <div class="count-box">
+            <i class="fas fa-flask"></i>
+            <span data-purecounter-start="0" data-purecounter-end="23" data-purecounter-duration="1" class="purecounter"></span>
+            <p><strong>Research Lab</strong> aut commodi quaerat. Aliquam ratione</p>
+            <a href="#">Find out more &raquo;</a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+          <div class="count-box">
+            <i class="fas fa-award"></i>
+            <span data-purecounter-start="0" data-purecounter-end="250" data-purecounter-duration="1" class="purecounter"></span>
+            <p><strong>Awards</strong> rerum asperiores dolor molestiae doloribu</p>
+            <a href="#">Find out more &raquo;</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Counts Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>Zencare provides a variety of healthcare services tailored to meet the needs of our patients. Our regular checkups involve thorough examinations and routine tests to monitor health and identify potential issues early. We offer counseling services to support mental and emotional well-being through personalized and compassionate care. In emergencies, we ensure swift action and clear communication to deliver timely medical attention. Our medication management focuses on safe prescribing and administration of treatments, emphasizing effective care and patient safety. Additionally, we provide advanced diagnostics to accurately assess health conditions, ensuring comprehensive and personalized healthcare solutions.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-heartbeat"></i></div>
+              <h4><a href="">Regular Checkup</a></h4>
+              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-pills"></i></div>
+              <h4><a href="">Medicine</a></h4>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-hospital-user"></i></div>
+              <h4><a href="">Pharmeologist</a></h4>
+              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-dna"></i></div>
+              <h4><a href="">Blood Test</a></h4>
+              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-wheelchair"></i></div>
+              <h4><a href="">Disabled Person</a></h4>
+              <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box">
+              <div class="icon"><i class="fas fa-notes-medical"></i></div>
+              <h4><a href="">Health Post</a></h4>
+              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Appointment Section ======= -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <section id="appointment" class="appointment section-bg">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Make an Appointment</h2>
+      </div>
+
+      <form id="appointmentForm" role="form" class="php-email-form">
+        <div class="row">
+          <div class="col-md-4 form-group">
+            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+          </div>
+          <div class="col-md-4 form-group mt-3 mt-md-0">
+            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+          </div>
+          <div class="col-md-4 form-group mt-3 mt-md-0">
+            <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 form-group mt-3">
+            <input type="datetime-local" name="appointmentDate" class="form-control" id="appointmentDate" placeholder="Appointment Date" required>
+          </div>
+          <div class="col-md-4 form-group mt-3">
+            <select name="ageGroup" id="ageGroup" class="form-select">
+              <option value="" disabled selected>Select Age</option>
+              <option value="Below 18">Below 18</option>
+              <option value="18-40">18-40</option>
+              <option value="40 above">40 above</option>
+            </select>
+          </div>
+          <div class="col-md-4 form-group mt-3">
+            <select name="doctor" id="doctor" class="form-select">
+              <option value="" disabled selected>Select Doctor</option>
+              <option value="Doctor 1">Doctor 1</option>
+              <option value="Doctor 2">Doctor 2</option>
+              <option value="Doctor 3">Doctor 3</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group mt-3">
+          <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Make an Appointment</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+<!-- End Appointment Section -->
+
+   
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+           </div>
+      </div>
+
+      <!--Google map-->
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=670&amp;height=363&amp;hl=en&amp;q=Vadodara, Gujarat, India&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+          <a href="https://www.fnfgo.com/">FNF Mods</a>
+        </div>
+        <style>
+          .mapouter {
+            position: relative;
+            text-align: right;
+            width: 100%;
+            height: 363px;
+          }
+          .gmap_canvas {
+            overflow: hidden;
+            background: none!important;
+            width: 100%;
+            height: 363px;
+          }
+          .gmap_iframe {
+            height: 363px!important;
+          }
+        </style>
+      </div>
+      <div class="container">
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>VADODARA, GUJARAT, INDIA</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>ZenCare@example.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+91 9023086942</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+            <form action="" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3></h3>
+              <p>
+                VADODARA,
+                GUJARAT,
+                INDIA<br><br>
+                <strong>Phone:</strong>+91 9023086942<br>
+                <strong>Email:</strong> ZenCare@example.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="https://www.facebook.com/groups/577400563258704" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>  
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#doctor">Doctors</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Extra Web Course</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Navbar Tutorial</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span></span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by CENTRAL X</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="vendor/php-email-form/validate.js"></script>
+  <script src="vendor/purecounter/purecounter.js"></script>
+  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="js/main.js"></script>
+  <script src="https://bot.orimon.ai/deploy/index.js" tenantId="613ac674-4ca1-456d-b414-0e5923ac1dbc"></script>
+
+  <!-- Optional: Include Bootstrap JS and dependencies if needed -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+   <!-- Include your script at the end of the body -->
+   <script>
+    document.getElementById('appointmentForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const form = e.target;
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const response = await fetch('http://localhost:5000/api/appointments', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': 'YOUR_SECRET_API_KEY' // Add your API key here if you are using one
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+          document.getElementById('responseMessage').textContent = 'Appointment successfully made!';
+          form.reset(); // Clear the form fields
+        } else {
+          document.getElementById('responseMessage').textContent = `Error: ${result.message}`;
+        }
+      } catch (error) {
+        document.getElementById('responseMessage').textContent = `Error: ${error.message}`;
+      }
+    });
+  </script>
+</body>
+
+</html>
